@@ -90,11 +90,7 @@ function initialize() {
 
       var distances = [];
 
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'Jelenlegi helyzeted'
-      });
+
 
       map.setCenter(pos);
 
@@ -123,6 +119,12 @@ function initialize() {
         directionsService.route(request, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
+
+            var infowindow = new google.maps.InfoWindow({
+              map: map,
+              position: pos,
+              content: 'Idő: ' + response.routes[0].legs[0].duration.value
+            });
           }
         });
 
