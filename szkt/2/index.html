@@ -11,12 +11,12 @@
 				padding: 0px
 			}
 			#panel {
-        width: 500px;
+        width: auto;
 				position: absolute;
 				top: 5px;
 				left: 50%;
 				z-index: 5;
-				background-color: rgba(0, 0, 0, 0.3);
+				background-color: rgba(0, 0, 0, 0.5);
 				padding: 5px;
 				border: 1px solid #999;
         color: white;
@@ -91,7 +91,7 @@ function initialize() {
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: ''
+        content: 'Jelenlegi helyzeted'
       });
 
       map.setCenter(pos);
