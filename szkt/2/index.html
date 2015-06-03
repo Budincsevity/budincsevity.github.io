@@ -99,7 +99,7 @@ function initialize() {
 
       var minIndex = Math.min.apply(Math, distances);
       console.log(distances.indexOf(minIndex));
-      console.log(names.indexOf(minIndex));
+      console.log(names[minIndex]);
 
     }, function() {
       handleNoGeolocation(true);
