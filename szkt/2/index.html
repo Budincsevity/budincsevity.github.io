@@ -70,7 +70,7 @@ function initialize() {
       }
 
       var min = Math.min.apply(Math, distances);
-      console.log(locationData.indexOf(min));
+      console.log(distances.indexOf(min));
 
     }, function() {
       handleNoGeolocation(true);
