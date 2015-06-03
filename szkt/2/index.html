@@ -5,12 +5,22 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
+			html, body, #map-canvas {
+				height: 100%;
+				margin: 0px;
+				padding: 0px
+			}
+			#panel {
+				position: absolute;
+				top: 5px;
+				left: 50%;
+				margin-left: -180px;
+				z-index: 5;
+				background-color: #fff;
+				padding: 5px;
+				border: 1px solid #999;
+			}
+		</style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=geometry"></script>
 
     <script>
@@ -39,6 +49,24 @@ var locationData = [
   new google.maps.LatLng(46.240044, 20.142872)
 ];
 
+var names = [
+  'Európa liget',
+  'Vértó',
+  'Rókusi II. sz. Ált.',
+  'Rókusi víztorony',
+  'Szatymazi utca',
+  'Vásárhelyi Pál utca',
+  'Damjanich u.',
+  'Tavasz utca',
+  'Rókusi templom',
+  'Anna - kút',
+  'Széchenyi tér',
+  'Somogyi utca',
+  'Aradi vértanúk tere',
+  'Bécsi krt.',
+  'Bem utca',
+  'Szeged pu.'
+];
 
 function initialize() {
   var mapOptions = {
@@ -69,8 +97,9 @@ function initialize() {
         distances.push(google.maps.geometry.spherical.computeDistanceBetween (pos, element));
       }
 
-      var min = Math.min.apply(Math, distances);
-      console.log(distances.indexOf(min));
+      var minIndex = Math.min.apply(Math, distances);
+      console.log(distances.indexOf(minIndex));
+      console.log(names.indexOf(minIndex));
 
     }, function() {
       handleNoGeolocation(true);
@@ -103,6 +132,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
   <body>
+    <div id="panel">
+      <div id=inputs class=clearfix>
+        <input type=file id=files name=files[] multiple />
+      </div>
+    </div>
     <div id="map-canvas"></div>
+  </body>
   </body>
 </html>
