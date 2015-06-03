@@ -75,7 +75,7 @@ var names = [
 
 function initialize() {
   var mapOptions = {
-    zoom: 6
+    zoom: 13
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -133,6 +133,7 @@ function handleNoGeolocation(errorFlag) {
   };
 
   var infowindow = new google.maps.InfoWindow(options);
+
   map.setCenter(options.position);
 }
 
