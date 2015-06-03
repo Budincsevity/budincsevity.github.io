@@ -32,7 +32,7 @@ function initialize() {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
-
+      var p1 = new google.maps.LatLng(45.463688, 9.18814);
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
@@ -41,7 +41,7 @@ function initialize() {
 
       map.setCenter(pos);
 
-      console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, (45.463688, 9.18814)));
+      console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, p1));
     }, function() {
       handleNoGeolocation(true);
     });
