@@ -17,10 +17,12 @@
 				left: 50%;
 				margin-left: -180px;
 				z-index: 5;
-				background-color: #aa000000;
+				background-color: rgba(50, 0, 0, 0);
 				padding: 5px;
 				border: 1px solid #999;
         color: white;
+        font-family: Arial;
+        font-size: 22px;
 			}
 		</style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -89,7 +91,7 @@ function initialize() {
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'Location found using HTML5.'
+        content: ''
       });
 
       map.setCenter(pos);
