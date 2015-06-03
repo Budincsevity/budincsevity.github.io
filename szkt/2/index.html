@@ -97,8 +97,10 @@ function initialize() {
         distances.push(google.maps.geometry.spherical.computeDistanceBetween (pos, element));
       }
 
-      var minIndex = Math.min.apply(Math, distances);
-      console.log(distances.indexOf(minIndex));
+      var min = Math.min.apply(Math, distances);
+      var minIndex = distances.indexOf(min);
+      
+      console.log(distances.indexOf(min));
       console.log(names[minIndex]);
 
     }, function() {
