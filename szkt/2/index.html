@@ -20,6 +20,26 @@
 
 var map;
 
+var locationData = [
+  new google.maps.LatLng(46.273596, 20.147050),
+  new google.maps.LatLng(46.272220, 20.143077),
+  new google.maps.LatLng(46.270782, 20.139110),
+  new google.maps.LatLng(46.269165, 20.135835),
+  new google.maps.LatLng(46.266623, 20.132448),
+  new google.maps.LatLng(46.263747, 20.132367),
+  new google.maps.LatLng(46.262823, 20.134972),
+  new google.maps.LatLng(46.260766, 20.138901),
+  new google.maps.LatLng(46.259159, 20.141914),
+  new google.maps.LatLng(46.256043, 20.147736),
+  new google.maps.LatLng(46.252630, 20.149168),
+  new google.maps.LatLng(46.250244, 20.147646),
+  new google.maps.LatLng(46.247698, 20.146865),
+  new google.maps.LatLng(46.243276, 20.143570),
+  new google.maps.LatLng(46.240156, 20.141166),
+  new google.maps.LatLng(46.240044, 20.142872)
+];
+
+
 function initialize() {
   var mapOptions = {
     zoom: 6
@@ -40,6 +60,11 @@ function initialize() {
       });
 
       map.setCenter(pos);
+
+      locationData.forEach(logArrayElements);
+      function logArrayElements(element, index, array) {
+        console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, element));
+      }
 
       console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, p1));
     }, function() {
