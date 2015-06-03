@@ -68,9 +68,9 @@ function initialize() {
 
         distances.push(google.maps.geometry.spherical.computeDistanceBetween (pos, element));
       }
-      
+
       var min = Math.min.apply(Math, distances);
-      console.log(locationData.indexOf(min););
+      console.log(locationData.indexOf(min));
 
     }, function() {
       handleNoGeolocation(true);
