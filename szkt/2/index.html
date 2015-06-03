@@ -75,7 +75,7 @@ var names = [
 
 function initialize() {
   var mapOptions = {
-    zoom: 13
+    zoom: 25
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -109,6 +109,20 @@ function initialize() {
       console.log(names[minIndex]);
 
       $("#text").text('Legközelebbi megálló: ' + names[minIndex]);
+
+
+
+      var path = new google.maps.Polyline({
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        path.push(pos);
+        path.push(locationData[minIndex]);
+
+    path.setMap(map);
 
     }, function() {
       handleNoGeolocation(true);
