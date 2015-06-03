@@ -11,7 +11,7 @@
         padding: 0px
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=geometry"></script>
 
     <script>
 // Note: This example requires that you consent to location sharing when
@@ -40,6 +40,8 @@ function initialize() {
       });
 
       map.setCenter(pos);
+
+      console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, (45.463688, 9.18814)));
     }, function() {
       handleNoGeolocation(true);
     });
