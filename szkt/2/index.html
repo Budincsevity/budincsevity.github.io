@@ -63,7 +63,7 @@ function initialize() {
 
       locationData.forEach(logArrayElements);
       function logArrayElements(element, index, array) {
-        console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, element));
+        console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, element) + ' ' + index);
       }
 
       console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, p1));
