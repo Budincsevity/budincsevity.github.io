@@ -123,7 +123,7 @@ function initialize() {
             var infowindow = new google.maps.InfoWindow({
               map: map,
               position: pos,
-              content: 'Idő: ' + response.routes[0].legs[0].duration.value
+              content: 'Idő: ' + ((response.routes[0].legs[0].duration.value) / 60) + ' perc'
             });
           }
         });
