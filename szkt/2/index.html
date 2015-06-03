@@ -118,7 +118,7 @@ function initialize() {
             // Note that Javascript allows us to access the constant
             // using square brackets and a string value as its
             // "property."
-            travelMode: google.maps.TravelMode["Walking"]
+            travelMode: google.maps.TravelMode.WALKING
         };
         directionsService.route(request, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
