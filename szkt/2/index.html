@@ -108,7 +108,7 @@ function initialize() {
       console.log(distances.indexOf(min));
       console.log(names[minIndex]);
 
-      $("#text").text(names[minIndex]);
+      $("#text").text('Legközelebbi megálló: ' + names[minIndex]);
 
     }, function() {
       handleNoGeolocation(true);
