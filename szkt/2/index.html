@@ -52,7 +52,9 @@ function initialize() {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
-      var p1 = new google.maps.LatLng(46.272276, 20.143018);
+
+      var distances = [];
+
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
@@ -63,10 +65,12 @@ function initialize() {
 
       locationData.forEach(logArrayElements);
       function logArrayElements(element, index, array) {
-        console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, element) + ' ' + index);
+
+        distances.push(google.maps.geometry.spherical.computeDistanceBetween (pos, element));
       }
 
-      console.log(google.maps.geometry.spherical.computeDistanceBetween (pos, p1));
+      console.log(Math.min.apply(Math, distances ));
+
     }, function() {
       handleNoGeolocation(true);
     });
