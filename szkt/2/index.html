@@ -10,25 +10,9 @@
 				margin: 0px;
 				padding: 0px
 			}
-			#panel {
-        width: auto;
-				position: absolute;
-				top: 5px;
-				left: 50%;
-				z-index: 5;
-				background-color: rgba(0, 0, 0, 0.5);
-				padding: 5px;
-				border: 1px solid #999;
-        color: white;
-        font-family: Arial;
-        font-size: 22px;
-        text-align: center;
-			}
 		</style>
     <style>
       .demo-card-square.mdl-card {
-        /*width: 320px;
-        height: 320px;*/
         width: 320px;
         height: 320px;
         position: absolute;
@@ -39,7 +23,7 @@
       .demo-card-square > .mdl-card__title {
         color: #fff;
         background:
-          url('images/dog.png') bottom right 15% no-repeat #46B6AC;
+          #46B6AC;
       }
     </style>
     <link rel="stylesheet" href="material.min.css">
@@ -162,19 +146,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
   <body>
-    <!-- <div id="panel">
-      <p id="text"></p>
-      <p id="date">0 perc múlva</p>
-      <p id="date-szeged-p">0 perc múlva</p>
-    </div> -->
     <div class="mdl-card mdl-shadow--2dp demo-card-square">
       <div class="mdl-card__title mdl-card--expand">
-        <h2 id="text" class="mdl-card__title-text">
-        </h2>
+        <h1 id="text" class="mdl-card__title-text">
+        </h1>
       </div>
       <div class="mdl-card__supporting-text">
-        <h5 id="date">0 perc múlva</h5>
-        <h5 id="date-szeged-p">0 perc múlva</h5>
+        <h6 id="date">0 perc múlva</h6>
+        <h6 id="date-szeged-p">0 perc múlva</h6>
       </div>
     </div>
 
