@@ -257,6 +257,9 @@ function findMinDiff(element, index, array) {
   if (index > 0) {
     console.log("all: " + departureTimeFromEuropaL[index]);
     var diff = now - departureTimeFromEuropaL[index];
+    console.log("now: " + now);
+    console.log("diff: " + diff);
+    console.log("diffMin: " + diffMin);
     if (diff < diffMin) {
       console.log("min: " + departureTimeFromEuropaL[minIndex]);
       console.log("now: " + now);
