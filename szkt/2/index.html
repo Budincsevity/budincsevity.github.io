@@ -92,8 +92,8 @@ function initialize() {
         }
       }
 
-      $("#date").text(Math.floor(diffMinFromEuropaL / 60000) + ' perc múlva');
-      $("#date-szeged-p").text(Math.floor(diffMinFromSzegedP / 60000) + ' perc múlva');
+      $("#date").text("Szeged pu. felé " + Math.floor(diffMinFromEuropaL / 60000) + ' perc múlva');
+      $("#date-szeged-p").text("Európa l. felé " + Math.floor(diffMinFromSzegedP / 60000) + ' perc múlva');
 
       var request = {
             origin: pos,
