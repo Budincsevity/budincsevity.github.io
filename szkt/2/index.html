@@ -277,7 +277,8 @@ function findMinDiff(element, index, array) {
   }
 }
 
-console.log(departureTimeFromEuropaL[minIndex]);
+console.log(Math.floor(diffMin / 60000));
+  $("#date").text(Math.floor(diffMin / 60000) + ' perc múlva');
 function initialize() {
   var mapOptions = {
     zoom: 25
