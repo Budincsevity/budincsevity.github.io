@@ -288,6 +288,7 @@ function initialize() {
 
       var date = new Date(departureTimeFromEuropaL[0].getTime() + travelTime[minIndex, 0] * 60000);
       var diffMin = Math.abs(now - date);
+      console.log("diffMin111: " + diffMin);
       var minIndexForStation = 0;
 
       departureTimeFromEuropaL.forEach(findMinDiff);
