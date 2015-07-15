@@ -255,14 +255,14 @@ now.setDate(1);
 now.setMonth(0);
 now.setYear(2000);
 console.log("now: " + now);
-var diffMin = now - departureTimeFromEuropaL[0];
+var diffMin = Math.absolute(now - departureTimeFromEuropaL[0]);
 var minIndex = 0;
 
 departureTimeFromEuropaL.forEach(findMinDiff);
 function findMinDiff(element, index, array) {
   if (index > 0) {
     console.log("all: " + departureTimeFromEuropaL[index]);
-    var diff = now - departureTimeFromEuropaL[index];
+    var diff = Math.absolute(now - departureTimeFromEuropaL[index]);
     console.log("now: " + now);
     console.log("diff: " + diff);
     console.log("diffMin: " + diffMin);
