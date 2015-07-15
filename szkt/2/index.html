@@ -293,9 +293,10 @@ function initialize() {
       departureTimeFromEuropaL.forEach(findMinDiff);
       function findMinDiff(element, index, array) {
         if (index > 0) {
-          console.log("all: " + departureTimeFromEuropaL[index]);
-          if(departureTimeFromEuropaL[index] > now) {
-            var date = new Date(departureTimeFromEuropaL[index].getTime() + travelTime[minIndex][0] * 60000);
+          var date = new Date(departureTimeFromEuropaL[index].getTime() + travelTime[minIndex][0] * 60000);
+          console.log("all: " + date);
+          if(date > now) {
+
             console.log("date: " + date);
             var diff = Math.abs(now - date);
             console.log("now: " + now);
