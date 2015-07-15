@@ -251,8 +251,11 @@ var departureTimeFromSzegedP = [
 
 
 var now = new Date();
+now.setDate(1);
+now.setMonth(0);
+now.setYear(2000);
 console.log("now: " + now);
-var diffMin = new Date() - departureTimeFromEuropaL[0];
+var diffMin = now - departureTimeFromEuropaL[0];
 var minIndex = 0;
 
 departureTimeFromEuropaL.forEach(findMinDiff);
