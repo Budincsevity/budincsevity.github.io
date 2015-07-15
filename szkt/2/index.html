@@ -250,9 +250,9 @@ var departureTimeFromSzegedP = [
 
 
 
-var now = Date.now();
-    console.log("now: " + now);
-var diffMin = Date.now() - departureTimeFromEuropaL[0];
+var now = new Date();
+console.log("now: " + now);
+var diffMin = new Date() - departureTimeFromEuropaL[0];
 var minIndex = 0;
 
 departureTimeFromEuropaL.forEach(findMinDiff);
