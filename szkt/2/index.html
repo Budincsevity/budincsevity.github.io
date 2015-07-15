@@ -262,15 +262,17 @@ departureTimeFromEuropaL.forEach(findMinDiff);
 function findMinDiff(element, index, array) {
   if (index > 0) {
     console.log("all: " + departureTimeFromEuropaL[index]);
-    var diff = Math.abs(now - departureTimeFromEuropaL[index]);
-    console.log("now: " + now);
-    console.log("diff: " + diff);
-    console.log("diffMin: " + diffMin);
-    if (diff < diffMin) {
-      console.log("min: " + departureTimeFromEuropaL[minIndex]);
+    if(departureTimeFromEuropaL[index] > now) {
+      var diff = Math.abs(now - departureTimeFromEuropaL[index]);
       console.log("now: " + now);
-      diffMin = diff;
-      minIndex = index;
+      console.log("diff: " + diff);
+      console.log("diffMin: " + diffMin);
+      if (diff < diffMin) {
+        console.log("min: " + departureTimeFromEuropaL[minIndex]);
+        console.log("now: " + now);
+        diffMin = diff;
+        minIndex = index;
+      }
     }
   }
 }
