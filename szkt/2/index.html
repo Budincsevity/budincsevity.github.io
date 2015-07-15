@@ -247,38 +247,6 @@ var departureTimeFromSzegedP = [
 
 ];
 
-
-
-
-var now = new Date();
-now.setDate(1);
-now.setMonth(0);
-now.setYear(2000);
-console.log("now: " + now);
-var diffMin = Math.abs(now - departureTimeFromEuropaL[0]);
-var minIndex = 0;
-
-departureTimeFromEuropaL.forEach(findMinDiff);
-function findMinDiff(element, index, array) {
-  if (index > 0) {
-    console.log("all: " + departureTimeFromEuropaL[index]);
-    if(departureTimeFromEuropaL[index] > now) {
-      var diff = Math.abs(now - departureTimeFromEuropaL[index]);
-      console.log("now: " + now);
-      console.log("diff: " + diff);
-      console.log("diffMin: " + diffMin);
-      if (diff < diffMin) {
-        console.log("min: " + departureTimeFromEuropaL[minIndex]);
-        console.log("now: " + now);
-        diffMin = diff;
-        minIndex = index;
-      }
-    }
-  }
-}
-
-console.log(Math.floor(diffMin / 60000));
-  $("#date").text(Math.floor(diffMin / 60000) + ' perc múlva');
 function initialize() {
   var mapOptions = {
     zoom: 25
@@ -312,6 +280,38 @@ function initialize() {
       console.log(names[minIndex]);
 
       $("#text").text('Legközelebbi megálló: ' + names[minIndex]);
+
+      var now = new Date();
+      now.setDate(1);
+      now.setMonth(0);
+      now.setYear(2000);
+
+      var date = new Date(departureTimeFromEuropaL[0].getTime() + travelTime[minIndex, 0] * 60000);
+      var diffMin = Math.abs(now - date;
+      var minIndexForStation = 0;
+
+      departureTimeFromEuropaL.forEach(findMinDiff);
+      function findMinDiff(element, index, array) {
+        if (index > 0) {
+          console.log("all: " + departureTimeFromEuropaL[index]);
+          if(departureTimeFromEuropaL[index] > now) {
+            var date = new Date(departureTimeFromEuropaL[index].getTime() + travelTime[minIndex, 0] * 60000);
+            var diff = Math.abs(now - date);
+            console.log("now: " + now);
+            console.log("diff: " + diff);
+            console.log("diffMin: " + diffMin);
+            if (diff < diffMin) {
+              console.log("min: " + departureTimeFromEuropaL[minIndex]);
+              console.log("now: " + now);
+              diffMin = diff;
+              minIndexForStation = index;
+            }
+          }
+        }
+      }
+
+      console.log(Math.floor(diffMin / 60000));
+      $("#date").text(Math.floor(diffMin / 60000) + ' perc múlva');
 
       var request = {
             origin: pos,
