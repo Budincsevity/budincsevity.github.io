@@ -252,16 +252,18 @@ departureTimeFromEuropaL.forEach(findMinDiff);
 
 var now = new Date();
 var diffMin = new Date() - departureTimeFromEuropaL[0];
+var minIndex = 0;
 function findMinDiff(element, index, array) {
   if (index > 0) {
     var diff = now - departureTimeFromEuropaL[index];
     if (diff < diffMin) {
       diffMin = diff;
+      minIndex = index;
     }
   }
 }
 
-console.log(diffMin);
+console.log(departureTimeFromEuropaL[minIndex]);
 function initialize() {
   var mapOptions = {
     zoom: 25
