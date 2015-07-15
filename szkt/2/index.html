@@ -247,6 +247,21 @@ var departureTimeFromSzegedP = [
 
 ];
 
+
+departureTimeFromEuropaL.forEach(findMinDiff);
+
+var now = new Date();
+var diffMin = new Date() - departureTimeFromEuropaL[0];
+function findMinDiff(element, index, array) {
+  if (index > 0) {
+    var diff = now - departureTimeFromEuropaL[index];
+    if (diff < diffMin) {
+      diffMin = diff;
+    }
+  }
+}
+
+console.log(diffMin);
 function initialize() {
   var mapOptions = {
     zoom: 25
