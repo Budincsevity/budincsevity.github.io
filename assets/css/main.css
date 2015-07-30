@@ -13,7 +13,6 @@ body {
     font-weight: 300;
     font-size: 16px;
     color: #555;
-    background-color: #1A1A1A;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
 }
@@ -87,7 +86,7 @@ a:after {
 	background-position: center center;
 	min-height: 700px;
 	width: 100%;
-	
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -134,7 +133,7 @@ a:after {
 	color: white;
 	font-size: 28px;
 	font-weight: 700;
-	letter-spacing: 1px;	
+	letter-spacing: 1px;
 }
 
 #f i {
@@ -220,7 +219,7 @@ a:after {
 .menu a > i {
 	float: left;
 	display: inline-block;
-	vertical-align: middle; 
+	vertical-align: middle;
 	text-align: left;
 	width: 25px;
 	font-size: 14px;
@@ -309,5 +308,3 @@ a:after {
 		 -o-transition: all .1s ease-in-out;
 			transition: all .1s ease-in-out;
 }
-
-
