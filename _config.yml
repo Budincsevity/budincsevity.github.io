@@ -1,6 +1,6 @@
-name: Your New Jekyll Site
-description: Blogging about stuffs
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+name: Norbert Budincsevity
+description: Blogging about some stuff, but mostly just programming
+meta_description: "Notes of Norbert Budincsevity"
 
 markdown: redcarpet
 highlighter: pygments
