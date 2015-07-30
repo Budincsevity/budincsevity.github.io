@@ -13,78 +13,23 @@ So if you want to integrate push notifications in your app you should use Notifi
 
 ##Registration
 
-{% highlight java %}
-//Register a new gcm ID
-GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(context);
-String gcmID = gcm.register(SENDER_ID);
-
-//New NotificationHub instance
-NotificationHub hub = new NotificationHub("<hub name>", "<connection string>", context);
-
-//Register your gcm ID with NotificationHub
-NativeRegistration registration = hub.register(gcmID);
-{% endhighlight %}
+{% gist 97043bab2d95c446ced6 %}
 
 As you can see, the first step is to create a new Project in Google Developer Console, and your Project Number will be the SENDER_ID;
-
 You can look for the hub name and connection string at your Notification Hubs instance in Azure Management Portal.
 
 ##Tags
 
 Tags are like group names or unique identifiers. You can provide tags at the registration and in backend you can target all clients with the same tags.
-{% highlight java %}
-//Register a new gcm ID
-GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(context);
-String gcmID = gcm.register(SENDER_ID);
+{% gist ba9e22e30874f8e3cc46 %}
 
-//New NotificationHub instance
-NotificationHub hub = new NotificationHub("<hub name>", "<connection string>", context);
-
-//Register your gcm ID with NotificationHub
-NativeRegistration registration = hub.register(gcmID, "tag");
-{% endhighlight %}
 ##Send notification from C# backend
-{% highlight csharp %}
-var hubClient =
-NotificationHubClient.CreateClientFromConnectionString("<connection string>", "<hub name>");
 
-//JSON payload
-var payload = "{ \"data\" : {\"msg\":\"Hello\"}}";
-
-var tags = new List<string>(){ "tags" };
-
-//Send push notification just to selected tags
-hubClient.SendGcmNativeNotificationAsync(payload, tags);
-{% endhighlight %}
+{% gist 24a2914d40970f1477f8 %}
 
 For Android clients you must use JSON payload, but if you provide your platform specific templates, backend can send platform independent notifications.
 
-{% highlight csharp %}
-
-//Register a new gcm ID
-GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(context);
-String gcmID = gcm.register(SENDER_ID);
-
-//New NotificationHub instance
-NotificationHub hub = new NotificationHub("<hub name>", "<connection string>", context);
-
- String template = "{ \"data\" : {\"msg\":\"$(message)\"}}";
-
-//Register your gcm ID with NotificationHub
-NativeRegistration registration = hub.registerTemplate(gcmID, "Template1", template, tag);
-{% endhighlight %}
-
-
-{% highlight csharp %}
-
-var hubClient =
-NotificationHubClient.CreateClientFromConnectionString("<connection string>", "<hub name>");
-
-var expressions = new Dictionary<string, string>();
-expressions.Add("message", "Hello");
-
-//Send platform independent message to all devices
-hubClient.SendTemplateNotificationAsync(expressions);
-{% endhighlight %}
+{% gist 0aba1287360b934a11f9 %}
+{% gist ee2d3456ef7aed7f62f3 %}
 
 Templates are great for localized information or client dependent messages. For example Mary wants to receive weather information in F, but Jack in C.
