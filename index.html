@@ -5,21 +5,21 @@ cover: true
 about: 'about.html'
 ---
 
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+<header class="main-header {% if page.cover %}" style="background-image: url(https://download.unsplash.com/photo-1433733071959-30cd185d14a8) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
             {% if page.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
             <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
+              <p>Hello, nice to meet you. My name is Norbert Budincsevity and I'm a Co-founder and Software Engineer at <a href="http://www.gettep.com">Tep</a>.</p>
+              <p>Sometimes I <a href="https://medium.com/@budincsevity">blog</a> about some interesting things to remember. Also I share links and my thoughts on <a href="http://twitter.com/Budincsevity">Twitter</a>.
+                <p>Feel free to fork my <a href="https://github.com/Budincsevity/">repositories</a>, or read my CV on <a href="http://www.linkedin.com/in/budincsevity">LinkedIn</a>.</p>
             </h2>
         </div>
     </div>
