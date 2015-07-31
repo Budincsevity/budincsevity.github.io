@@ -4,7 +4,7 @@ meta_description: "Notes of Norbert Budincsevity"
 
 markdown: redcarpet
 highlighter: pygments
-logo: true
+logo: https://download.unsplash.com/photo-1433733071959-30cd185d14a8
 paginate: 15
 baseurl: /
 domain_name: 'http://budincsevity.github.io'
