@@ -8,7 +8,7 @@ logo: true
 paginate: 15
 baseurl: /
 domain_name: 'http://budincsevity.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-51118211-1'
 
 # Details for the RSS feed generator
 url:            'blog url'
