@@ -11,6 +11,6 @@ Or offline if you are using one of their apps. With Photos you get an unlimited 
 But there is a thing. Google compresses all you photos after uploading them. All of them. Even below 16MP resolution. Can you notice the difference between compressed and original photos?
 I compared a couple of photos and here are the results.
 
-![Alt text](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/original1.JPG "Original")
+![Original](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/original1.JPG "Original")
 
-![Alt text](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/gp1.JPG "Downloaded from Google Photos")
+![Downloaded from Google Photos](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/gp1.JPG "Downloaded from Google Photos")
