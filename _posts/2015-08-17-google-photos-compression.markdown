@@ -14,3 +14,9 @@ I compared a couple of photos and here are the results.
 ![Original](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/original1.JPG "Original")
 
 ![Downloaded from Google Photos](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/gp1.JPG "Downloaded from Google Photos")
+
+The first one is the original, and the second one is from Google Photos. I can't see any difference. Let's go deeper.
+
+![Original](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/original2.JPG "Original")
+
+![Downloaded from Google Photos](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/gp2.JPG "Downloaded from Google Photos")
