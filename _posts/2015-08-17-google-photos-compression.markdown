@@ -29,3 +29,7 @@ Once I wrote a small script in Matlab, what I used to solve "Spot the difference
 
 And here is the result of the script:
 ![Result](https://github.com/Budincsevity/budincsevity.github.io/raw/master/assets/images/result.png "Result")
+
+The red rectangles are for showing the differences between two images. The script uses Matlab's built in graytresh() method to create the binary image above the treshold. So the result shows that the algorithm used compressing the photo is so great. Nearly lossless. But it depends on your treshold level.
+
+This post was written just for fun. I know that maybe this is not a fair comparison. And the result can be so different for other images. But I was curious about compression (should I backup all my images to Photos and compress all of them), and it was fun to use my 'Spot the differences' script for this problem.
