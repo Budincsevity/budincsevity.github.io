@@ -23,11 +23,9 @@ The first one is the original, and the second one is from Google Photos. I can't
 
 Again the first one is cropped from the original photo, and the second one is from the downloaded one. Maybe if you have good eyes, and zoom in a little you can spot some differences. Image from Photos is softly blurred.
 
-
-| Image from  | Size | Resolution |
-| ------------- |:-------------:| -----:|
-| Original | 8,1 MB | 18 megapixel |
-| Google Photos | 2,4 MB  | 16 megapixel |
-
+Image from  | Size | Resolution
+--- | --- | ---
+Original | 8,1 MB | 18 megapixel
+Google Photos | 2,4 MB  | 16 megapixel
 
 Once I wrote a small script in Matlab, what I used to solve "Spot the differences" games. Let's try that script on these images. You can download the source code from my [Github repository](https://github.com/Budincsevity/Spot-the-difference).
