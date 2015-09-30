@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Google Photos Compression"
+title:  "Google Photos compression"
 date:   2015-09-25 11:30:00
 categories: review
 ---
