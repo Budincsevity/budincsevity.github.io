@@ -11,6 +11,11 @@ Or offline if you are using one of their apps. With Photos you get an unlimited 
 But there is a thing. Google compress all you photos after uploading them. All of them. Even below 16MP resolution. Can you notice the difference between compressed and original photos?
 I compared a couple of photos and here are the results.
 
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
 Image from  | Size | Resolution
 --- | --- | ---
 Original | 8,1 MB | 18 megapixel
