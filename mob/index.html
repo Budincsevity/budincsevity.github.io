@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Movie or Book</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>
+
+      window.onload = function() {
+        run();
+      };
+
+      function run () {
+        var random = Math.floor((Math.random() * 3));
+
+        var text = '{\"titles\":[{\"name\":\"The Lord of the Rings: The Fellowship of the Ring\",\"book_year\":\"1954\",\"movie_year\":\"2001\"},{\"name\":\"Harry Potter and the Sorcerer\'s Stone\",\"book_year\":\"1997\",\"movie_year\":\"2001\"},{\"name\":\"The Martian\",\"book_year\":\"2014\",\"movie_year\":\"2015\"}]} ';
+        var titles = JSON.parse(text);
+
+        $("#title").text (
+        "The \"" + titles.titles[random].name + "\" book or the movie ");
+
+        $("#movie_year").text (
+        "Movie release year: " + titles.titles[random].movie_year);
+
+
+        $("#book_year").text (
+        "Book release year:" + titles.titles[random].book_year);
+      }
+
+    </script>
+  </head>
+  <body>
+    <p>Which one was first?</p>
+    <p id="title"></p>
+
+    <p id="movie_year"></p>
+    <p id="book_year"></p>
+  <body>
+</html>
