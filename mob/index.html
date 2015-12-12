@@ -11,9 +11,9 @@
       };
 
       function run () {
-        var random = Math.floor((Math.random() * 3));
+        var random = Math.floor((Math.random() * 10));
 
-        var text = '{\"titles\":[{\"name\":\"The Lord of the Rings: The Fellowship of the Ring\",\"book_year\":\"1954\",\"movie_year\":\"2001\"},{\"name\":\"Harry Potter and the Sorcerer\'s Stone\",\"book_year\":\"1997\",\"movie_year\":\"2001\"},{\"name\":\"The Martian\",\"book_year\":\"2014\",\"movie_year\":\"2015\"}]} ';
+        var text = '{\"titles\":[{\"name\":\"The Lord of the Rings: The Fellowship of the Ring\",\"book_year\":\"1954\",\"movie_year\":\"2001\"},{\"name\":\"Harry Potter and the Sorcerer\'s Stone\",\"book_year\":\"1997\",\"movie_year\":\"2001\"},{\"name\":\"The Martian\",\"book_year\":\"2014\",\"movie_year\":\"2015\"},{\"name\":\"Jumanji\",\"book_year\":\"1981\",\"movie_year\":\"1995\"},{\"name\":\"Forrest Gump\",\"book_year\":\"1985\",\"movie_year\":\"1994\"},{\"name\":\"Jurassic Park\",\"book_year\":\"1990\",\"movie_year\":\"1993\"},{\"name\":\"Psycho\",\"book_year\":\"1959\",\"movie_year\":\"1960\"},{\"name\":\"The Godfather\",\"book_year\":\"1969\",\"movie_year\":\"1972\"},{\"name\":\"Fight Club\",\"book_year\":\"1996\",\"movie_year\":\"1999\"},{\"name\":\"The Polar Express\",\"book_year\":\"1985\",\"movie_year\":\"2004\"}]}';
         var titles = JSON.parse(text);
 
         $("#title").text (
@@ -24,7 +24,7 @@
 
 
         $("#book_year").text (
-        "Book release year:" + titles.titles[random].book_year);
+        "Book release year: " + titles.titles[random].book_year);
       }
 
     </script>
