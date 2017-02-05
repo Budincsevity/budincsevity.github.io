@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Effective Java - Slides</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Effective Java (2nd Edition): Joshua Bloch</h1>
+				<h3>2017</h3>
+				<p>
+					<small>Created by Norbert Budincsevity</small>
+				</p>
+			</section>
+			<!-- AGENDA  -->
+			<section>
+				<h2>Agenda</h2>
+				<ul>
+					<li>What is this book about?</li>
+					<li>Chapter 1: Creating and Destroying Objects [1-7]</li>
+					<li>Chapter 2: Methods Common to All Objects [8-12]</li>
+					<li>Chapter 3: Classes and Interfaces [13-22]</li>
+				</ul>
+			</section>
+
+			<!-- What is Effective Java? -->
+			<section>
+				<h2>Effective Java</h2>
+			</section>
+
+			<!-- Chapter 1 #1-->
+			<section>
+				<h2>Chapter 1</h2>
+				<section>
+					#1: Consider static factory methods instead of constructors
+				</section>
+				<section>
+					<p>
+						static factory method = public static method that returns an instance of the class
+					</p>
+					<pre><code class="hljs" data-trim contenteditable>
+							public static Boolean valueOf(boolean b) {
+								return b ? Boolean.TRUE : Boolean.FALSE;
+							}
+						</code></pre>
+					<p>
+						A class can provide its clients with static factory methods instead of, or in addition to, constructors.</p>
+				</section>
+				<section>
+					#1 Advantage: Unlike constructors, they have names.
+					<p>
+						In cases where a class seems to require multiple constructors with the same signature, replace the constructors with static factory methods and carefully chosen names to highlight their differences.
+					</p>
+				</section>
+				<section>
+					#2 Advantage: Unlike constructors, they are not required to create a new object each time they’re invoked.
+					<p>
+
+					</p>
+				</section>
+			</section>
+
+			<section>
+				<h2>Chapter 1</h2>
+				<section>
+					<h4>#2: Consider a builder when faced with many constructor parameters</h4>
+
+					<p>
+						Static factories and constructors share a limitation: they do not scale well to large numbers of optional parameters.
+					</p>
+				</section>
+				<section>
+
+					<ul>
+						<li>
+
+							Telescoping constructors - hard to write/read, runtime errors
+						</li>
+						<li>
+							JavaBeans pattern - can be inconsistent, precludes the possibility of making a class immutable
+						</li>
+						<li>
+							Builder Pattern
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h2>Chapter 1</h2>
+				<section>
+					<h4>#3: Enforce the singleton property with a private constructor or an enum type</h4> A singleton is simply a class that is instantiated exactly once [Gamma95, p. 127].
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim contenteditable>
+	// Singleton with public final field
+	public class Elvis {
+		public static final Elvis INSTANCE = new Elvis();
+		private Elvis() { ... }
+		public void leaveTheBuilding() { ... }
+	}
+	</code></pre>
+					<p>
+						A privileged client can invoke the private constructor reflectively. If you need to defend against this attack, modify the constructor to make it throw an exception if it’s asked to create a second instance.
+					</p>
+				</section>
+				<section>
+					<h4>Serializable</h4>
+					<p>
+						To maintain the singleton guarantee, you have to declare all instance fields transient and provide a readResolve method (Item 77). Otherwise, each time a serialized instance is deserialized, a new instance will be created.
+					</p>
+				</section>
+				<section>
+					<h4>Simply make an enum type with one element</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+		// Enum singleton - the preferred approach
+		public enum Elvis {
+		INSTANCE;
+		public void leaveTheBuilding() { ... }
+		}
+	</code></pre>
+					<p>
+						This approach is functionally equivalent to the public field approach, except that it is more concise, provides the serialization machinery for free, and provides an ironclad guarantee against multiple instantiation, even in the face of sophisticated
+						serialization or reflection attacks.
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h4>#4: Enforce noninstantiability with a private constructor</h4>
+					<p>
+						Static method and static field classes
+						<ul>
+
+							<li>
+								Can be used to group related methods on primitive values or arrays (eg. Arrays)
+							</li>
+							<li>
+								Can also be used to group static methods, including factory methods, for objects that implement a particular interface (eg. Collections)
+							</li>
+							<li>
+								They can be used to group methods on a final class, instead of extending the class
+							</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					Such utility classes were not designed to be instantiated, however, the compiler provides a public, parameterless default constructor.
+					<p>
+						A default constructor is generated only if a class contains no explicit constructors, so a class can be made noninstantiable by including a private constructor:
+					</p><pre><code class="hljs" data-trim contenteditable>
+	// Noninstantiable utility class
+	public class UtilityClass {
+	// Suppress default constructor for noninstantiability
+	private UtilityClass() {
+	throw new AssertionError();
+	}
+	... // Remainder omitted
+	}
+		</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h4>#5: Avoid creating unnecessary objects</h4>
+					<p>
+						An object can always be reused if it is immutable.
+					</p>
+					<p>
+						As an extreme example of what not to do:
+					</p>
+					<pre><code class="hljs" data-trim contenteditable>
+			String s = new String("stringette"); // DON'T DO THIS!
+</code></pre>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim contenteditable>
+			String s = "stringette";
+</code></pre> This version uses a single String instance, rather than creating a new one each time it is executed. Furthermore, it is guaranteed that the object will be reused by any other code running in the sa
+				</section>
+				<section>
+					<h5>You can often avoid creating unnecessary objects by using static factory methods</h5>
+
+					<pre><code class="hljs" data-trim contenteditable>
+			Boolean.valueOf(String)
+</code></pre> vs
+					<pre><code class="hljs" data-trim contenteditable>
+	Boolean(String)
+
+</code></pre>
+				</section>
+				<section>
+					<h4>PersonImproved is 250 times faster</h4>
+				</section>
+				<section>
+					<h4>Adapters [Gamma95,
+p. 139],</h4> Because an adapter has no state beyond that of its backing object, there’s no need to create more than one instance of a given adapter to a given object.
+				</section>
+			</section>
+
+			<!-- Chapter 2 -->
+			<section>
+				<h2>Chapter 2</h2>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
