@@ -29,9 +29,6 @@
 			<section>
 				<h1>Effective Java (2nd Edition): Joshua Bloch</h1>
 				<h3>2017</h3>
-				<p>
-					<small>Created by Norbert Budincsevity</small>
-				</p>
 			</section>
 			<!-- AGENDA  -->
 			<section>
@@ -39,7 +36,7 @@
 				<ul>
 					<li>What is this book about?</li>
 					<li>Chapter 1: Creating and Destroying Objects [1-7]</li>
-					<li>Chapter 2: Methods Common to All Objects [8-12]</li>
+					<li>Chapter 2: Methods Common to All Objects [8-10]</li>
 				</ul>
 			</section>
 
@@ -59,10 +56,10 @@
 						static factory method = public static method that returns an instance of the class
 					</p>
 					<pre><code class="hljs" data-trim contenteditable>
-							public static Boolean valueOf(boolean b) {
-								return b ? Boolean.TRUE : Boolean.FALSE;
-							}
-						</code></pre>
+          public static Boolean valueOf(boolean b) {
+            return b ? Boolean.TRUE : Boolean.FALSE;
+          }
+        </code></pre>
 					<p>
 						A class can provide its clients with static factory methods instead of, or in addition to, constructors.</p>
 				</section>
@@ -75,17 +72,51 @@
 				<section>
 					#2 Advantage: Unlike constructors, they are not required to create a new object each time they’re invoked.
 					<p>
-
 					</p>
 				</section>
+				<section>
+					#3 Advantage: Unlike constructors, they can return an object of any subtype of their return type
+				</section>
+				<section>
+					#4 Advantage: They reduce the verbosity of creating parameterized type instances.
+					<p>
+					</p>
+				</section>
+				<section>
+					#1 Disadvantage: The main disadvantage of providing only static factory methods is that classes without public or protected constructors cannot be subclassed.
+				</section>
+				<section>
+					#2 Disadvantage: They are not readily distinguishable from other static methods.
+					<p>
+						They do not stand out in API documentation in the way that constructors do, so it can be difficult to figure out how to instantiate a class that provides static factory methods instead of constructors.
+					</p>
+				</section>
+				<section>
+					<ul>
+						<li>valueOf - Such static factories are effectively type-conversion methods</li>
+						<li>of</li>
+						<li>getInstance</li>
+						<li>newInstance</li>
+						<li>getType</li>
+						<li>newType - Type indicates the type of object returned by the factory method.</li>
+					</ul>
+				</section>
+			</section>
 			</section>
 
+			<!-- Chapter 1 #2-->
 			<section>
 				<section>
 					<h4>#2: Consider a builder when faced with many constructor parameters</h4>
-					<p>
-						Static factories and constructors share a limitation: they do not scale well to large numbers of optional parameters.
-					</p>
+					<pre><code class="hljs" data-trim contenteditable>
+              NutritionFacts cocaCola =
+                new NutritionFacts(240, 8, 100, 0, 35, 27);
+            </code></pre>
+					<section>
+						<p>
+							Static factories and constructors share a limitation: they do not scale well to large numbers of optional parameters.
+						</p>
+					</section>
 				</section>
 				<section>
 
@@ -196,7 +227,7 @@
 				<section>
 					<pre><code class="hljs" data-trim contenteditable>
 			String s = "stringette";
-</code></pre> This version uses a single String instance, rather than creating a new one each time it is executed. Furthermore, it is guaranteed that the object will be reused by any other code running in the sa
+</code></pre> This version uses a single String instance, rather than creating a new one each time it is executed. Furthermore, it is guaranteed that the object will be reused by any other code running in the same virtual machine.
 				</section>
 				<section>
 					<h5>You can often avoid creating unnecessary objects by using static factory methods</h5>
@@ -214,8 +245,7 @@
 				</section>
 				<section>
 					<h4>Adapters [Gamma95,
-p. 139],</h4> Because an adapter has no state beyond that of its backing object, there’s no need to create more than one instance of a given adapter to a given object.
-(eg. keySet)
+p. 139],</h4> Because an adapter has no state beyond that of its backing object, there’s no need to create more than one instance of a given adapter to a given object. (eg. keySet)
 				</section>
 				<section>
 					<pre><code class="hljs" data-trim contenteditable>
@@ -240,7 +270,7 @@ boxed primitives, and watch out for unintentional autoboxing</h4>
 				</section>
 				<section>
 
-<pre><code class="hljs" data-trim contenteditable>
+					<pre><code class="hljs" data-trim contenteditable>
 	public Object pop() {
 		if (size == 0)
 			throw new EmptyStackException();
@@ -250,37 +280,101 @@ boxed primitives, and watch out for unintentional autoboxing</h4>
 }
 </code></pre>
 				</section>
-<section>
-	Nulling out object references should be the exception rather than the norm.
-The best way to eliminate an obsolete reference is to let the variable that contained
-the reference fall out of scope. This occurs naturally if you define each variable in
-the narrowest possible scope (Item 45).
-</section>
-<section>
-	Whenever a class manages its own memory, the programmer
-should be alert for memory leaks. Whenever an element is freed, any
-object references contained in the element should be nulled out.
-</section>
-<section>
-<h4>Another common sources of memory leaks:</h4>
-<ul>
-	<li>
-		Caches (WeakHashMap can be a sollution)
-	</li>
-	<li>
-		Listeners and other callbacks (clients forget to deregister them explicitly)
-	</li>
-</ul>
+				<section>
+					Nulling out object references should be the exception rather than the norm. The best way to eliminate an obsolete reference is to let the variable that contained the reference fall out of scope. This occurs naturally if you define each variable in the
+					narrowest possible scope (Item 45).
+				</section>
+				<section>
+					Whenever a class manages its own memory, the programmer should be alert for memory leaks. Whenever an element is freed, any object references contained in the element should be nulled out.
+				</section>
+				<section>
+					<h4>Another common sources of memory leaks:</h4>
+					<ul>
+						<li>
+							Caches (WeakHashMap can be a sollution)
+						</li>
+						<li>
+							Listeners and other callbacks (clients forget to deregister them explicitly)
+						</li>
+					</ul>
 
-</section>
+				</section>
 			</section>
-<section>
-	<h4>#7: Avoid finalizers</h4>
-</section>
+			<section>
+				<h4>#7: Avoid finalizers</h4> In summary:
+				<ul>
+					<li>
+						Don’t use finalizers except as a safety net or to terminate noncritical native resources
+					</li>
+					<li>
+						Remember to invoke super.finalize
+					</li>
+					<li>
+						Log the invalid usage from the finalizer.
+					</li>
+					<li>
+						Consider using a finalizer guardian, if you need to associate a finalizer with a public, nonfinal class,
+					</li>
+				</ul>
+			</section>
 			<!-- Chapter 2 -->
 			<section>
-				<h2>Chapter 2</h2>
+				<section>
+					<h2>Chapter 2</h2>
+				</section>
+				<section>
+					<h4>#8: Obey the general contract when overriding equals</h4> Mostly for value classes, when the class has a notion of logical equality. They can serve as map keys or set elements with predictable, desirable behavior.
+				</section>
+				<section>
+					With very few exceptions, equals methods should perform deterministic computations on memory-resident objects. Do not write an equals method that depends on unreliable resources. (eg. java.net.URL)
+
+				</section>
+				<section>
+					<ul>
+						<li>
+							Reflexive
+						</li>
+						<li>
+							Symmetric
+						</li>
+						<li>
+							Transitive
+						</li>
+						<li>
+							Consistent
+						</li>
+						<li>
+							For any non-null reference value x, x.equals(null) must return false.
+						</li>
+					</ul>
+
+				</section>
+
 			</section>
+			<section>
+				<section>
+					<h4>#10: Always override toString</h4> “PhoneNumber@163b91.”
+				</section>
+				<section>
+					When practical, the toString method should return all of the interesting information contained in the object.
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim contenteditable>
+					@Override public String toString() {
+						return String.format("(%03d) %03d-%04d",
+							areaCode, prefix, lineNumber);
+					}
+</code></pre>
+
+				</section>
+				<section>
+					One important decision you’ll have to make when implementing a toString method is whether to specify the format of the return value in the documentation. Whether or not you decide to specify the format, you should clearly document your intentions.
+				</section>
+				<section>
+					Whether or not you specify the format, provide programmatic access to all of the information contained in the value returned by toString. If you fail to do this, you force programmers who need this information to parse the string.
+				</section>
+			</section>
+
 		</div>
 	</div>
 
@@ -294,23 +388,19 @@ object references contained in the element should be nulled out.
 
 			// More info https://github.com/hakimel/reveal.js#dependencies
 			dependencies: [{
-					src: 'plugin/markdown/marked.js'
-				},
-				{
-					src: 'plugin/markdown/markdown.js'
-				},
-				{
-					src: 'plugin/notes/notes.js',
-					async: true
-				},
-				{
-					src: 'plugin/highlight/highlight.js',
-					async: true,
-					callback: function() {
-						hljs.initHighlightingOnLoad();
-					}
+				src: 'plugin/markdown/marked.js'
+			}, {
+				src: 'plugin/markdown/markdown.js'
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			}, {
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				callback: function() {
+					hljs.initHighlightingOnLoad();
 				}
-			]
+			}]
 		});
 	</script>
 </body>
