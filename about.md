@@ -1,6 +1,7 @@
 ---
 layout: page
-title: About me 
+title: About
+permalink: /about/
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
