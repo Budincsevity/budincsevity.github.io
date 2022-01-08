@@ -1,0 +1,244 @@
+{
+    "days": [
+        {
+            "exercises": [
+                {
+                    "name": "6/6 Séta",
+                    "repetition": "5 perc"
+                },
+                {
+                    "name": "Fekvőtámasz",
+                    "repetition": "15"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "20 sec"
+                },
+                {
+                    "name": "Fekvőtámasz",
+                    "repetition": "15"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "20 sec"
+                },
+                {
+                    "name": "Fekvőtámasz",
+                    "repetition": "15"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Fekvenyomás rúddal",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Fekvenyomás rúddal",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Fekvenyomás rúddal",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Fekvenyomás rúddal",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Csigán keresztezés alul (itt felül van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Csigán keresztezés alul (itt felül van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Csigán keresztezés alul (itt felül van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Csigán keresztezés alul (itt felül van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Csigán keresztezés felül (itt alul van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Csigán keresztezés felül (itt alul van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Csigán keresztezés felül (itt alul van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Csigán keresztezés felül (itt alul van a csiga vége)",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Tricepsz letolás csigán",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Tricepsz letolás csigán",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Tricepsz letolás csigán",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Tricepsz letolás csigán",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Lórugás padon",
+                    "repetition": "12"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Lórugás padon",
+                    "repetition": "12"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Lórugás padon",
+                    "repetition": "12"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Tolódzkodás gépen",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Tolódzkodás gépen",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Tolódzkodás gépen",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Tolódzkodás gépen",
+                    "repetition": "10"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "60 sec"
+                },
+                {
+                    "name": "Plank",
+                    "repetition": "45 sec"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Plank",
+                    "repetition": "45 sec"
+                },
+                {
+                    "name": "Pihenő",
+                    "repetition": "30 sec"
+                },
+                {
+                    "name": "Plank",
+                    "repetition": "45 sec"
+                },
+                {
+                    "name": "Levezető, nyújtás",
+                    "repetition": ""
+                }
+            ]
+        }
+    ]
+}
