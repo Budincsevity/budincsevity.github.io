@@ -1,0 +1,23 @@
+body {
+    background-color: #f6f6f6;
+    font-size: 24pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
+    height: 8em;
+    line-height: 8em;
+  }
+
+.pause {
+    background-color: #ff533d;
+}
+
+.exercise {
+    background-color: #8eaebd;
+}
+
+.done {
+    background-color: #0f1628;
+}
